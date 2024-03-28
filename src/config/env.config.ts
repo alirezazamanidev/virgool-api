@@ -1,7 +1,7 @@
-import {config as dotEnvConfig} from 'dotenv';
-import { join} from 'path'
+import { config as dotEnvConfig } from 'dotenv';
+import { join } from 'path';
 
-dotEnvConfig()
+dotEnvConfig();
 dotEnvConfig({
-    path:join(process.cwd(),`.env.${process.env.NODE_ENV}`)
-})
+  path: join(process.cwd(), `.env.${process.env.NODE_ENV}`),
+});
