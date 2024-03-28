@@ -1,6 +1,7 @@
 import { BaseEntity } from 'src/common/abstracts';
 import { EntityName } from 'src/common/enums';
-import { Column, Entity } from 'typeorm';
+import { Column, Entity, JoinColumn, OneToOne } from 'typeorm';
+import { OtpEntity } from './otp.entity';
 
 @Entity({ name: EntityName.User })
 export class UserEntity extends BaseEntity {
@@ -12,4 +13,9 @@ export class UserEntity extends BaseEntity {
   email: string;
   @Column({ nullable: true })
   password: string;
+  @Column({nullable: true})
+  otpId: number;
+  @OneToOne(() => OtpEntity, otp => otp.user, {nullable: true})
+  @JoinColumn()
+  otp: OtpEntity
 }

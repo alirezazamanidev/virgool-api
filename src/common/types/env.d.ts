@@ -8,6 +8,8 @@ declare namespace NodeJS {
     DB_USERNAME: string;
     DB_PASSWORD: string;
     DB_NAME: string;
+    // Seacrets
+    OTP_TOKEN_SECRET:string
     // Env
     NODE_ENV: string;
   }
